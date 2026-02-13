@@ -368,7 +368,7 @@ const DeploymentSection = () => {
             </div>
           </motion.div>
 
-          {/* Terminal Image */}
+          {/* Terminal Video */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -377,13 +377,16 @@ const DeploymentSection = () => {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1637044527362-5ac1dc1d7446?w=800&q=80" 
-                alt="Mac terminal showing AI deployment"
+              <video 
+                src="https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/n9qwmbrj_sledo.mp4" 
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-auto"
               />
               {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
             </div>
             
             {/* Floating badge */}
