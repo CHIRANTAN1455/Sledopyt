@@ -1,34 +1,150 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Sledopyt AI - Custom Styles */
+
+/* Hero background with overlay */
+.hero-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, 
+        rgba(2, 6, 23, 0.8) 0%, 
+        rgba(2, 6, 23, 0.95) 100%
+    );
+    z-index: 1;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.hero-bg > * {
+    position: relative;
+    z-index: 2;
 }
 
-.App-link {
-    color: #61dafb;
+/* Bento grid card hover effects */
+.bento-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px -10px rgba(124, 58, 237, 0.3);
+    border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Team member avatar glow */
+.team-avatar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px -5px rgba(124, 58, 237, 0.6);
+}
+
+/* Button hover animation */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    transform: translateX(100%);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.5);
+}
+
+/* Input focus styles */
+.input-field {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    outline: none;
+}
+
+/* Navigation blur */
+.nav-blur {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Animated gradient border */
+@keyframes gradient-rotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-border {
+    position: relative;
+    background: #020617;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #7c3aed, #38bdf8, #7c3aed, #38bdf8);
+    background-size: 400% 400%;
+    animation: gradient-rotate 8s ease infinite;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+/* Service icon animation */
+.service-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.bento-card:hover .service-icon {
+    transform: scale(1.1);
+    color: #7c3aed;
+}
+
+/* Section divider */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), transparent);
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px -5px rgba(124, 58, 237, 0.4); }
+    50% { box-shadow: 0 0 40px -5px rgba(124, 58, 237, 0.6); }
+}
+
+.pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
 }
