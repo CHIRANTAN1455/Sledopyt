@@ -323,6 +323,84 @@ const ServicesSection = () => {
   );
 };
 
+// Terminal Deployment Section
+const DeploymentSection = () => {
+  return (
+    <section className="py-24 md:py-32 bg-slate-900/30 relative overflow-hidden" data-testid="deployment-section">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span className="text-sm text-green-400">Deploy with Confidence</span>
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              One Command.<br />
+              <span className="text-violet-500">Infinite Scale.</span>
+            </h2>
+            
+            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+              Our AI models deploy seamlessly to your infrastructure. Whether it's cloud, on-premise, or hybrid - watch your intelligent systems come alive with a single command.
+            </p>
+
+            {/* Fake terminal commands */}
+            <div className="bg-slate-950 rounded-xl p-4 border border-slate-800 font-mono text-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500"></span>
+                <span className="text-slate-500 ml-2 text-xs">terminal</span>
+              </div>
+              <div className="space-y-2 text-slate-300">
+                <p><span className="text-green-400">$</span> sledopyt deploy --model gpt-agent-v3</p>
+                <p className="text-slate-500">→ Initializing neural pathways...</p>
+                <p className="text-slate-500">→ Connecting to inference cluster...</p>
+                <p className="text-green-400">✓ Model deployed successfully</p>
+                <p className="text-violet-400">⚡ Endpoint: api.sledopyt.ai/v3/agent</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Terminal Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1637044527362-5ac1dc1d7446?w=800&q=80" 
+                alt="Mac terminal showing AI deployment"
+                className="w-full h-auto"
+              />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
+            </div>
+            
+            {/* Floating badge */}
+            <motion.div 
+              className="absolute -bottom-4 -right-4 bg-violet-600 text-white px-4 py-2 rounded-lg shadow-lg"
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              <span className="text-sm font-medium">99.9% Uptime</span>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // Team Section
 const TeamSection = () => {
   return (
