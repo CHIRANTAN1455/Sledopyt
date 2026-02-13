@@ -376,15 +376,18 @@ const DeploymentSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-900">
               <video 
                 src="https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/n9qwmbrj_sledo.mp4" 
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-auto"
-              />
+                preload="auto"
+                className="w-full h-auto min-h-[300px] object-cover"
+              >
+                Your browser does not support the video tag.
+              </video>
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent pointer-events-none"></div>
             </div>
