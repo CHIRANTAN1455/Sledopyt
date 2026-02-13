@@ -681,6 +681,7 @@ const Home = () => {
       <HeroSection />
       <div className="section-divider"></div>
       <ServicesSection />
+      <DeploymentSection />
       <TeamSection />
       <ContactSection />
       <Footer />
