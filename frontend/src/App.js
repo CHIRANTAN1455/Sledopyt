@@ -458,7 +458,7 @@ const ContactSection = () => {
             {/* Abu Dhabi Image */}
             <div className="mt-10 rounded-2xl overflow-hidden border border-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1569924858666-71d393bdfd42?w=800&q=80" 
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" 
                 alt="Abu Dhabi Skyline"
                 className="w-full h-48 object-cover"
               />
