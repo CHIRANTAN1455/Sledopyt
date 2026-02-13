@@ -1,0 +1,200 @@
+{
+  "brand_identity": {
+    "name": "Sledopyt AI",
+    "tagline": "The Architects of Intelligence",
+    "description": "We build the neural pathways for tomorrow's businesses. From autonomous agents to server control systems, we navigate the chaos of data.",
+    "address": "WeWork Hub71, Al Khatem Tower, ADGM Square, Al Maryah Island, Abu Dhabi",
+    "tone": "Mysterious, Elite, High-Tech, Efficient",
+    "archetype": "The Architect (Swiss Precision + Cyberpunk Edge)"
+  },
+  "design_system": {
+    "theme": "dark",
+    "colors": {
+      "palette": {
+        "background": "#020617",
+        "foreground": "#f8fafc",
+        "primary": "#7c3aed",
+        "secondary": "#1e293b",
+        "accent": "#38bdf8",
+        "muted": "#334155",
+        "border": "#1e293b"
+      },
+      "tailwind_vars": {
+        "--background": "222.2 84% 4.9%",
+        "--foreground": "210 40% 98%",
+        "--card": "222.2 84% 4.9%",
+        "--card-foreground": "210 40% 98%",
+        "--popover": "222.2 84% 4.9%",
+        "--popover-foreground": "210 40% 98%",
+        "--primary": "262.1 83.3% 57.8%",
+        "--primary-foreground": "210 40% 98%",
+        "--secondary": "217.2 32.6% 17.5%",
+        "--secondary-foreground": "210 40% 98%",
+        "--muted": "217.2 32.6% 17.5%",
+        "--muted-foreground": "215 20.2% 65.1%",
+        "--accent": "217.2 32.6% 17.5%",
+        "--accent-foreground": "210 40% 98%",
+        "--destructive": "0 62.8% 30.6%",
+        "--destructive-foreground": "210 40% 98%",
+        "--border": "217.2 32.6% 17.5%",
+        "--input": "217.2 32.6% 17.5%",
+        "--ring": "262.1 83.3% 57.8%"
+      }
+    },
+    "typography": {
+      "headings": {
+        "family": "Outfit, sans-serif",
+        "weights": ["500", "700"],
+        "tracking": "-0.02em"
+      },
+      "body": {
+        "family": "DM Sans, sans-serif",
+        "weights": ["400", "500"],
+        "tracking": "0"
+      },
+      "mono": {
+        "family": "JetBrains Mono, monospace"
+      }
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-24",
+      "section_gap": "gap-16 md:gap-32"
+    },
+    "visual_enhancers": {
+      "glassmorphism": "bg-slate-950/50 backdrop-blur-xl border border-white/10",
+      "glow": "shadow-[0_0_30px_-5px_rgba(124,58,237,0.3)]",
+      "gradient_text": "bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": {
+        "url": "https://images.unsplash.com/photo-1762279388956-1c098163a2a8?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Abstract neon neural network",
+        "usage": "Full screen background with overlay"
+      },
+      "team": [
+        {
+          "url": "https://images.unsplash.com/photo-1589668944320-409833e5ba10?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "role": "CEO & Founder",
+          "name": "Alexei Volkov"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1659353221237-6a1cfb73fd90?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "role": "CTO",
+          "name": "David Chen"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1758599543154-76ec1c4257df?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "role": "Head of AI",
+          "name": "Sarah Al-Fayed"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1698092826352-38667b6ed6f2?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "role": "Lead Engineer",
+          "name": "Marcus Thorne"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1589668944320-409833e5ba10?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "role": "Product Manager",
+          "name": "Elena Rostova"
+        }
+      ],
+      "location": {
+        "url": "https://images.unsplash.com/photo-1569924258666-71393bdfd42b?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "alt": "Abu Dhabi Skyline Night",
+        "usage": "Contact section background or side image"
+      }
+    },
+    "icons": "lucide-react"
+  },
+  "components": {
+    "Hero": {
+      "type": "Immersive",
+      "layout": "Centered text, full-screen abstract background",
+      "elements": [
+        "Headline: 'Intelligence, Architected.'",
+        "Subheadline: 'Sledopyt AI builds the autonomous systems that power the next generation of enterprise.'",
+        "CTA: 'Initialize Protocol' (Primary Button)",
+        "Background: Abstract neon data flow image with heavy dark overlay"
+      ]
+    },
+    "Services": {
+      "type": "Bento Grid",
+      "layout": "Asymmetric Grid (Tetris Style)",
+      "items": [
+        {
+          "title": "AI Agents & Bots",
+          "desc": "Autonomous digital workers that never sleep.",
+          "icon": "Bot",
+          "span": "col-span-1 md:col-span-2 row-span-2"
+        },
+        {
+          "title": "Smart CRM",
+          "desc": "Predictive customer relationship management.",
+          "icon": "Database",
+          "span": "col-span-1 md:col-span-1 row-span-1"
+        },
+        {
+          "title": "Server Control",
+          "desc": "Messaging-based infrastructure command.",
+          "icon": "Server",
+          "span": "col-span-1 md:col-span-1 row-span-1"
+        },
+        {
+          "title": "Ticket Management",
+          "desc": "Auto-triage and resolution systems.",
+          "icon": "Ticket",
+          "span": "col-span-1 md:col-span-2 row-span-1"
+        }
+      ]
+    },
+    "Team": {
+      "type": "Circular Grid",
+      "layout": "Flex row with generous spacing",
+      "style": "Circular avatars (w-32 h-32) with glowing borders on hover. Names below."
+    },
+    "Contact": {
+      "type": "Split Layout",
+      "layout": "Left: Contact Info + Address. Right: Minimalist Form.",
+      "address_display": "WeWork Hub71, Al Khatem Tower, ADGM Square, Abu Dhabi",
+      "form_fields": ["Name", "Email", "Message"]
+    }
+  },
+  "tech_stack": {
+    "framework": "React",
+    "styling": "Tailwind CSS",
+    "animation": "Framer Motion",
+    "icons": "Lucide React",
+    "fonts": "Google Fonts (Outfit, DM Sans)"
+  },
+  "instructions_to_main_agent": [
+    "1. INSTALL FONTS: Add '@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Outfit:wght@300;500;700;900&display=swap');' to index.css",
+    "2. UPDATE TAILWIND: Copy the 'tailwind_vars' into the :root and .dark classes in index.css. Ensure 'darkMode: class' is set in tailwind.config.js",
+    "3. CREATE COMPONENTS: Build the BentoGrid and Hero components first.",
+    "4. USE IMAGES: Use the provided Unsplash URLs. Do not use placeholders.",
+    "5. ANIMATE: Use framer-motion for simple fade-ins on scroll (initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}}).",
+    "6. DATA-TESTID: Add data-testid to all inputs and buttons."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts",
+    "Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}
