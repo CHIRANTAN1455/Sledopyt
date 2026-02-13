@@ -102,13 +102,20 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <motion.a 
             href="/" 
-            className="text-2xl font-bold tracking-tight"
+            className="flex items-center gap-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             data-testid="logo"
           >
-            <span className="text-white">Sledopyt</span>
-            <span className="text-violet-500"> AI</span>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/khguvbti_logo.png" 
+              alt="Sledopyt AI Logo" 
+              className="h-10 w-10"
+            />
+            <span className="text-2xl font-bold tracking-tight">
+              <span className="text-white">Sledopyt</span>
+              <span className="text-violet-500"> AI</span>
+            </span>
           </motion.a>
 
           {/* Desktop Menu */}
@@ -560,7 +567,12 @@ const Footer = () => {
     <footer className="py-12 bg-slate-900/50 border-t border-slate-800" data-testid="footer">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/khguvbti_logo.png" 
+              alt="Sledopyt AI Logo" 
+              className="h-8 w-8"
+            />
             <span className="text-xl font-bold text-white">Sledopyt</span>
             <span className="text-xl font-bold text-violet-500">AI</span>
           </div>
