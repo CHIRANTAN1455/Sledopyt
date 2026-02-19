@@ -16,29 +16,29 @@ const API = `${BACKEND_URL}/api`;
 // Team members data
 const teamMembers = [
   {
-    name: "Alexei Volkov",
-    role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    name: "Chirantan Pradhan",
+    role: "CoFounder & CTO",
+    image: "https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/wlnhmrnh_Chirantan%20Pradhan.jpg"
   },
   {
-    name: "David Chen",
-    role: "CTO",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+    name: "Udit Bhaskar",
+    role: "CoFounder",
+    image: "https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/4gv8ubgw_Udit%20Bhasker.jpg"
   },
   {
-    name: "Sarah Al-Fayed",
-    role: "Head of AI",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face"
+    name: "Shivyaa Sharma",
+    role: "Tech Lead",
+    image: "https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/jgvop2ci_Shaivyaa%20Sharma.png"
   },
   {
-    name: "Marcus Thorne",
-    role: "Lead Engineer",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
+    name: "Dev Arora",
+    role: "Lead AI/ML Engineer",
+    image: "https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/2qzkt1k8_Dev%20Arora.jpg"
   },
   {
-    name: "Elena Rostova",
-    role: "Product Manager",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+    name: "Hardeep Singh",
+    role: "Product & Marketing",
+    image: "https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/r9zwm7c6_Hardeep%20Singh.jpg"
   }
 ];
 
