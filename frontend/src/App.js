@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { Bot, Database, Server, Ticket, MapPin, Mail, Phone, Send, Menu, X, ChevronDown } from "lucide-react";
+import { Bot, Database, Server, Ticket, MapPin, Mail, Phone, Send, Menu, X, ChevronDown, Terminal } from "lucide-react";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { Textarea } from "./components/ui/textarea";
 import { Toaster, toast } from "sonner";
+import AgentsPage from "./AgentsPage";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
