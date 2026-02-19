@@ -755,6 +755,7 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/agents" element={<AgentsPage />} />
         </Routes>
       </BrowserRouter>
     </div>
