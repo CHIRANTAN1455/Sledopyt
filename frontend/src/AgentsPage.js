@@ -21,9 +21,68 @@ import {
   Terminal,
   Cpu,
   Network,
-  Activity
+  Activity,
+  Linkedin,
+  MapPin,
+  Mail,
+  Calendar,
+  Ticket,
+  HelpCircle,
+  UserPlus,
+  Star,
+  Share2,
+  Search,
+  Newspaper,
+  DollarSign,
+  FileText,
+  Receipt,
+  FileCheck,
+  Wifi,
+  Database,
+  AlertTriangle,
+  GitBranch
 } from "lucide-react";
 import { Button } from "./components/ui/button";
+
+// Automation data with icons
+const automations = [
+  { title: "Lead Enrichment from LinkedIn", icon: Linkedin, category: "Sales" },
+  { title: "Google Maps Lead Scraper", icon: MapPin, category: "Sales" },
+  { title: "Cold Outreach Personalization", icon: Mail, category: "Sales" },
+  { title: "Meeting Assistant", icon: Calendar, category: "Productivity" },
+  { title: "AI Support Ticket Triage", icon: Ticket, category: "Support" },
+  { title: "Auto-Reply for Common FAQs", icon: HelpCircle, category: "Support" },
+  { title: "Customer Onboarding Sequence", icon: UserPlus, category: "Support" },
+  { title: "Automated Review Request", icon: Star, category: "Marketing" },
+  { title: "Social Media Repurposing", icon: Share2, category: "Marketing" },
+  { title: "SEO Keyword Monitor", icon: Search, category: "Marketing" },
+  { title: "Newsletter Aggregator", icon: Newspaper, category: "Marketing" },
+  { title: "Ad Spend Alert System", icon: DollarSign, category: "Finance" },
+  { title: "AI Resume Screener", icon: FileText, category: "HR" },
+  { title: "Expense Management via Telegram", icon: Receipt, category: "Finance" },
+  { title: "Automatic Invoice Reminder", icon: Receipt, category: "Finance" },
+  { title: "Contract Expiry Tracker", icon: FileCheck, category: "Operations" },
+  { title: "Website Uptime & SSL Monitor", icon: Wifi, category: "DevOps" },
+  { title: "Automated Database Backups", icon: Database, category: "DevOps" },
+  { title: "Slack Phishing Link Scanner", icon: AlertTriangle, category: "Security" },
+  { title: "GitHub Issue to Project Management", icon: GitBranch, category: "DevOps" }
+];
+
+// Get category color
+const getCategoryColor = (category) => {
+  const colors = {
+    Sales: 'emerald',
+    Productivity: 'cyan',
+    Support: 'violet',
+    Marketing: 'amber',
+    Finance: 'rose',
+    HR: 'blue',
+    Operations: 'orange',
+    DevOps: 'teal',
+    Security: 'red'
+  };
+  return colors[category] || 'emerald';
+};
 
 // Innovative Navigation with glitch effect
 const AgentsNavigation = () => {
@@ -89,7 +148,7 @@ const AgentsNavigation = () => {
 // Cyberpunk Hero with Matrix-style effect
 const AgentsHero = () => {
   const [displayText, setDisplayText] = useState('');
-  const fullText = 'AUTONOMOUS_AGENTS_v3.0';
+  const fullText = 'AGENTIC_AUTOMATIONS_v3.0';
   
   useEffect(() => {
     let index = 0;
@@ -151,17 +210,17 @@ const AgentsHero = () => {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-white">Your AI</span>
+              <span className="text-white">Automate</span>
               <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 animate-gradient">
-                Workforce
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400">
+                Everything
               </span>
               <br />
-              <span className="text-slate-500 text-4xl lg:text-5xl">Awaits.</span>
+              <span className="text-slate-500 text-4xl lg:text-5xl">with AI Agents.</span>
             </h1>
 
             <p className="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed font-mono">
-              <span className="text-emerald-400">{'>'}</span> Deploy intelligent agents that think, act, and scale. No sleep. No errors. Just results.
+              <span className="text-emerald-400">{'>'}</span> 20+ ready-to-deploy automations. From lead gen to DevOps. No code required.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -171,17 +230,19 @@ const AgentsHero = () => {
                 data-testid="hero-deploy-btn"
               >
                 <Cpu className="mr-2 w-5 h-5 group-hover:animate-spin" />
-                Initialize Agent
+                Explore Automations
               </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 px-8 py-6 text-lg"
-                data-testid="hero-demo-btn"
-              >
-                Watch Demo
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link to="/#contact">
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 px-8 py-6 text-lg"
+                  data-testid="hero-contact-btn"
+                >
+                  Contact Us
+                  <ChevronRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
             </div>
           </motion.div>
 
@@ -239,10 +300,10 @@ const AgentsHero = () => {
 
               {/* Floating labels */}
               {[
-                { label: 'VOICE', icon: Phone, pos: 'top-0 left-1/2 -translate-x-1/2' },
-                { label: 'CHAT', icon: MessageSquare, pos: 'bottom-0 left-1/2 -translate-x-1/2' },
-                { label: 'TASK', icon: Zap, pos: 'left-0 top-1/2 -translate-y-1/2' },
-                { label: 'RESEARCH', icon: Brain, pos: 'right-0 top-1/2 -translate-y-1/2' }
+                { label: 'SALES', icon: Linkedin, pos: 'top-0 left-1/2 -translate-x-1/2' },
+                { label: 'SUPPORT', icon: Ticket, pos: 'bottom-0 left-1/2 -translate-x-1/2' },
+                { label: 'DEVOPS', icon: GitBranch, pos: 'left-0 top-1/2 -translate-y-1/2' },
+                { label: 'MARKETING', icon: Share2, pos: 'right-0 top-1/2 -translate-y-1/2' }
               ].map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -263,207 +324,124 @@ const AgentsHero = () => {
   );
 };
 
-// Interactive Agent Showcase with horizontal scroll
-const AgentShowcase = () => {
-  const agents = [
-    {
-      id: 'voice',
-      title: 'Voice Agents',
-      subtitle: 'Human-like conversations',
-      description: 'AI that speaks naturally, handles calls 24/7, and never forgets a detail.',
-      icon: Phone,
-      color: 'emerald',
-      stats: [
-        { label: 'Avg Response', value: '0.3s' },
-        { label: 'Languages', value: '50+' },
-        { label: 'Accuracy', value: '99.2%' }
-      ],
-      features: ['Natural Speech', 'Emotion Detection', 'Multi-turn Memory']
-    },
-    {
-      id: 'chat',
-      title: 'Chat Agents',
-      subtitle: 'Instant engagement',
-      description: 'Smart chatbots that convert visitors, qualify leads, and support customers.',
-      icon: MessageSquare,
-      color: 'cyan',
-      stats: [
-        { label: 'Messages/day', value: '100K+' },
-        { label: 'Resolution', value: '94%' },
-        { label: 'CSAT', value: '4.8/5' }
-      ],
-      features: ['Context Aware', 'CRM Integration', 'Smart Routing']
-    },
-    {
-      id: 'task',
-      title: 'Task Agents',
-      subtitle: 'Autonomous execution',
-      description: 'Digital workers that automate complex workflows across your systems.',
-      icon: Zap,
-      color: 'amber',
-      stats: [
-        { label: 'Tasks/hour', value: '1000+' },
-        { label: 'Error Rate', value: '0.01%' },
-        { label: 'Uptime', value: '99.99%' }
-      ],
-      features: ['API Integration', 'Workflow Builder', 'Error Recovery']
-    },
-    {
-      id: 'research',
-      title: 'Research Agents',
-      subtitle: 'Knowledge synthesis',
-      description: 'AI researchers that gather, analyze, and summarize information at scale.',
-      icon: Brain,
-      color: 'violet',
-      stats: [
-        { label: 'Sources', value: '1M+' },
-        { label: 'Reports/day', value: '500+' },
-        { label: 'Accuracy', value: '97%' }
-      ],
-      features: ['Web Scraping', 'Data Analysis', 'Report Generation']
-    }
-  ];
-
-  const [activeAgent, setActiveAgent] = useState(0);
+// Moving Tiles Automation Showcase
+const AutomationShowcase = () => {
+  // Split automations into two rows for opposite directions
+  const row1 = automations.slice(0, 10);
+  const row2 = automations.slice(10, 20);
 
   return (
-    <section className="py-32 bg-slate-950 relative overflow-hidden" data-testid="agent-showcase">
+    <section className="py-24 bg-slate-950 relative overflow-hidden" data-testid="automation-showcase">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent"></div>
       
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 mb-16">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded bg-emerald-500/10 border border-emerald-500/30 mb-6 font-mono">
+            <Zap className="w-4 h-4 text-emerald-400" />
+            <span className="text-emerald-400 text-sm">20+ READY-TO-DEPLOY</span>
+          </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Choose Your <span className="text-emerald-400">Agent</span>
+            Agentic <span className="text-emerald-400">Automations</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto font-mono">
-            {'>'} Select an agent type to explore capabilities
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            Pre-built AI agents for every business need. Deploy in minutes, not months.
           </p>
         </motion.div>
+      </div>
 
-        {/* Agent selector tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {agents.map((agent, index) => (
-            <motion.button
-              key={agent.id}
-              onClick={() => setActiveAgent(index)}
-              className={`flex items-center gap-3 px-6 py-3 rounded-lg border transition-all duration-300 ${
-                activeAgent === index 
-                  ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400' 
-                  : 'bg-slate-900/50 border-slate-700 text-slate-400 hover:border-slate-600'
-              }`}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              data-testid={`agent-tab-${agent.id}`}
+      {/* Moving tiles - Row 1 (Left to Right) */}
+      <div className="relative mb-6 overflow-hidden">
+        <motion.div 
+          className="flex gap-4"
+          animate={{ x: [0, -2000] }}
+          transition={{ 
+            duration: 30, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+        >
+          {[...row1, ...row1, ...row1].map((item, index) => (
+            <div
+              key={`row1-${index}`}
+              className="flex-shrink-0 group"
             >
-              <agent.icon className="w-5 h-5" />
-              <span className="font-medium">{agent.title}</span>
-            </motion.button>
+              <div className="w-72 h-24 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 p-4 flex items-center gap-4 transition-all duration-300 hover:bg-slate-900">
+                <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-emerald-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-medium text-sm leading-tight truncate">{item.title}</p>
+                  <span className="text-xs text-emerald-400/70 font-mono">{item.category}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Moving tiles - Row 2 (Right to Left) */}
+      <div className="relative overflow-hidden">
+        <motion.div 
+          className="flex gap-4"
+          animate={{ x: [-2000, 0] }}
+          transition={{ 
+            duration: 35, 
+            repeat: Infinity, 
+            ease: "linear" 
+          }}
+        >
+          {[...row2, ...row2, ...row2].map((item, index) => (
+            <div
+              key={`row2-${index}`}
+              className="flex-shrink-0 group"
+            >
+              <div className="w-72 h-24 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/50 p-4 flex items-center gap-4 transition-all duration-300 hover:bg-slate-900">
+                <div className="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-500/20 transition-colors">
+                  <item.icon className="w-6 h-6 text-cyan-400" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-medium text-sm leading-tight truncate">{item.title}</p>
+                  <span className="text-xs text-cyan-400/70 font-mono">{item.category}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Stats bar */}
+      <div className="max-w-7xl mx-auto px-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            { label: 'Automations', value: '20+', icon: Bot },
+            { label: 'Businesses Served', value: '500+', icon: Globe },
+            { label: 'Tasks Automated/Day', value: '1M+', icon: Zap },
+            { label: 'Avg. Time Saved', value: '40hrs/wk', icon: Clock }
+          ].map((stat) => (
+            <motion.div
+              key={stat.label}
+              className="p-4 rounded-xl bg-black/50 border border-slate-800 text-center"
+              whileHover={{ borderColor: 'rgba(16,185,129,0.5)' }}
+            >
+              <stat.icon className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
+              <p className="text-2xl font-bold text-white font-mono">{stat.value}</p>
+              <p className="text-sm text-slate-500">{stat.label}</p>
+            </motion.div>
           ))}
         </div>
-
-        {/* Agent detail card */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeAgent}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
-          >
-            {/* Main card */}
-            <div className="lg:col-span-2 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-8 relative overflow-hidden">
-              {/* Glow */}
-              <div className={`absolute top-0 right-0 w-64 h-64 bg-${agents[activeAgent].color}-500/10 rounded-full blur-3xl`}></div>
-              
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <div className={`w-16 h-16 rounded-xl bg-${agents[activeAgent].color}-500/20 flex items-center justify-center mb-4`}>
-                      {(() => {
-                        const IconComponent = agents[activeAgent].icon;
-                        return <IconComponent className="w-8 h-8 text-emerald-400" />;
-                      })()}
-                    </div>
-                    <h3 className="text-3xl font-bold text-white mb-2">{agents[activeAgent].title}</h3>
-                    <p className="text-emerald-400 font-mono text-sm">{agents[activeAgent].subtitle}</p>
-                  </div>
-                  <div className="hidden sm:block px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/30">
-                    <span className="text-emerald-400 text-sm font-mono">ACTIVE</span>
-                  </div>
-                </div>
-
-                <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-                  {agents[activeAgent].description}
-                </p>
-
-                {/* Features */}
-                <div className="flex flex-wrap gap-3">
-                  {agents[activeAgent].features.map((feature) => (
-                    <span 
-                      key={feature}
-                      className="px-4 py-2 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-sm"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Stats card */}
-            <div className="rounded-2xl bg-black border border-emerald-500/20 p-6">
-              <h4 className="text-emerald-400 font-mono text-sm mb-6 flex items-center gap-2">
-                <Activity className="w-4 h-4" />
-                PERFORMANCE_METRICS
-              </h4>
-              
-              <div className="space-y-6">
-                {agents[activeAgent].stats.map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-slate-500 text-sm">{stat.label}</span>
-                      <span className="text-white font-mono text-xl">{stat.value}</span>
-                    </div>
-                    <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-to-r from-emerald-500 to-cyan-500"
-                        initial={{ width: 0 }}
-                        animate={{ width: '85%' }}
-                        transition={{ duration: 1, delay: i * 0.2 }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <Button 
-                className="w-full mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold"
-                data-testid="deploy-agent-btn"
-              >
-                Deploy This Agent
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </div>
-          </motion.div>
-        </AnimatePresence>
       </div>
     </section>
   );
 };
 
-// Voice Agent Demo with waveform
+// Compact Voice Demo Section
 const VoiceAgentDemo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
@@ -479,68 +457,64 @@ const VoiceAgentDemo = () => {
   };
 
   return (
-    <section className="py-32 bg-black relative overflow-hidden" data-testid="voice-agent-section">
-      {/* Animated background lines */}
-      <div className="absolute inset-0">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent w-full"
-            style={{ top: `${20 + i * 15}%` }}
-            animate={{ x: ['-100%', '100%'] }}
-            transition={{ duration: 8 + i * 2, repeat: Infinity, ease: 'linear' }}
-          />
-        ))}
-      </div>
-
+    <section className="py-24 bg-black relative overflow-hidden" data-testid="voice-agent-section">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Video/Audio Player */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content - Brief */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden border border-emerald-500/30 bg-slate-950 shadow-2xl shadow-emerald-500/10">
-              {/* Terminal header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-black border-b border-emerald-500/20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-violet-500/10 border border-violet-500/30 mb-6 font-mono">
+              <Phone className="w-4 h-4 text-violet-400" />
+              <span className="text-violet-400 text-sm">VOICE_AGENT_DEMO</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Voice Agents <span className="text-violet-400">in Action</span>
+            </h2>
+
+            <p className="text-slate-400 text-lg mb-6 leading-relaxed">
+              Our Voice Agents handle calls naturally, schedule appointments, and qualify leads—all autonomously. Here's a real estate inquiry demo.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-6">
+              {['Natural Speech', 'Multi-language', 'CRM Sync', '24/7 Available'].map((tag) => (
+                <span key={tag} className="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-slate-300 text-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <Button
+              onClick={togglePlay}
+              className="bg-violet-500 hover:bg-violet-400 text-white"
+              data-testid="play-demo-btn"
+            >
+              {isPlaying ? <Pause className="mr-2 w-4 h-4" /> : <Play className="mr-2 w-4 h-4" />}
+              {isPlaying ? 'Pause Demo' : 'Play Demo'}
+            </Button>
+          </motion.div>
+
+          {/* Video Player - Compact */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="rounded-xl overflow-hidden border border-violet-500/30 bg-slate-950">
+              {/* Header */}
+              <div className="flex items-center justify-between px-4 py-2 bg-black border-b border-violet-500/20">
                 <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-red-500"></span>
-                  <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
-                  <span className="w-3 h-3 rounded-full bg-green-500"></span>
-                  <span className="text-slate-500 text-xs ml-2 font-mono">voice_agent_demo.exe</span>
+                  <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                  <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
+                  <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                  <span className="text-slate-500 text-xs ml-2 font-mono">voice_demo.mp4</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-emerald-500 animate-pulse' : 'bg-slate-600'}`}></div>
-                  <span className={`text-xs font-mono ${isPlaying ? 'text-emerald-400' : 'text-slate-500'}`}>
-                    {isPlaying ? 'STREAMING' : 'READY'}
-                  </span>
-                </div>
+                <div className={`w-2 h-2 rounded-full ${isPlaying ? 'bg-green-500 animate-pulse' : 'bg-slate-600'}`}></div>
               </div>
 
-              {/* Call info bar */}
-              <div className="px-4 py-3 bg-emerald-500/5 border-b border-emerald-500/20 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <p className="text-white font-medium text-sm">Real Estate Voice Agent</p>
-                    <p className="text-slate-500 text-xs font-mono">DEMO_CALL_001</p>
-                  </div>
-                </div>
-                <Button
-                  onClick={togglePlay}
-                  size="sm"
-                  className={`${isPlaying ? 'bg-red-500 hover:bg-red-600' : 'bg-emerald-500 hover:bg-emerald-400'} text-white`}
-                  data-testid="play-demo-btn"
-                >
-                  {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                </Button>
-              </div>
-
-              {/* Video */}
               <video 
                 ref={videoRef}
                 src="https://customer-assets.emergentagent.com/job_ai-solutions-hub-49/artifacts/sxl4bngd_EstateAgent.mp4"
@@ -551,66 +525,67 @@ const VoiceAgentDemo = () => {
                 controls
                 preload="metadata"
               />
-
-              {/* Waveform */}
-              {isPlaying && (
-                <div className="absolute bottom-20 left-4 right-4 flex justify-center items-end gap-0.5 h-8">
-                  {[...Array(40)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="w-1 bg-emerald-500 rounded-full"
-                      animate={{
-                        height: [4, Math.random() * 24 + 4, 4],
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        repeat: Infinity,
-                        delay: i * 0.02,
-                      }}
-                    />
-                  ))}
-                </div>
-              )}
             </div>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="order-1 lg:order-2"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 mb-6 font-mono">
-              <Mic className="w-4 h-4 text-emerald-400" />
-              <span className="text-emerald-400 text-sm">LIVE_DEMO</span>
-            </div>
+// Use Cases Grid
+const UseCasesGrid = () => {
+  const categories = [
+    { name: 'Sales & Lead Gen', count: 3, color: 'emerald', items: automations.filter(a => a.category === 'Sales') },
+    { name: 'Customer Support', count: 3, color: 'violet', items: automations.filter(a => a.category === 'Support') },
+    { name: 'Marketing', count: 4, color: 'amber', items: automations.filter(a => a.category === 'Marketing') },
+    { name: 'Finance & Ops', count: 4, color: 'cyan', items: automations.filter(a => ['Finance', 'Operations'].includes(a.category)) },
+    { name: 'DevOps & Security', count: 4, color: 'rose', items: automations.filter(a => ['DevOps', 'Security'].includes(a.category)) },
+  ];
 
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-              Hear It In<br />
-              <span className="text-emerald-400">Action</span>
-            </h2>
+  return (
+    <section className="py-24 bg-slate-950 relative" data-testid="use-cases-section">
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+            By <span className="text-emerald-400">Category</span>
+          </h2>
+          <p className="text-slate-400 text-lg">
+            Find the perfect automation for your department
+          </p>
+        </motion.div>
 
-            <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-              Listen to our Voice Agent handle a real estate inquiry. Notice how it understands context, answers questions naturally, and guides the conversation toward booking a viewing.
-            </p>
-
-            {/* Features grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: Globe, label: 'Multi-language', value: '50+' },
-                { icon: Clock, label: 'Latency', value: '<300ms' },
-                { icon: Shield, label: 'Accuracy', value: '99.2%' },
-                { icon: Network, label: 'Integrations', value: 'CRM, Cal' }
-              ].map((item) => (
-                <div key={item.label} className="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
-                  <item.icon className="w-5 h-5 text-emerald-400 mb-2" />
-                  <p className="text-white font-mono text-lg">{item.value}</p>
-                  <p className="text-slate-500 text-sm">{item.label}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {categories.map((category, index) => (
+            <motion.div
+              key={category.name}
+              className="rounded-xl bg-slate-900/50 border border-slate-800 p-6 hover:border-emerald-500/30 transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-white">{category.name}</h3>
+                <span className="text-xs text-emerald-400 font-mono bg-emerald-500/10 px-2 py-1 rounded">
+                  {category.items.length} agents
+                </span>
+              </div>
+              <div className="space-y-2">
+                {category.items.map((item) => (
+                  <div key={item.title} className="flex items-center gap-2 text-slate-400 text-sm">
+                    <item.icon className="w-4 h-4 text-emerald-400/70" />
+                    <span className="truncate">{item.title}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
@@ -620,7 +595,7 @@ const VoiceAgentDemo = () => {
 // CTA Section
 const AgentsCTA = () => {
   return (
-    <section className="py-32 bg-gradient-to-b from-slate-950 to-black relative" data-testid="agents-cta-section">
+    <section className="py-24 bg-gradient-to-b from-slate-950 to-black relative" data-testid="agents-cta-section">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -629,18 +604,18 @@ const AgentsCTA = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 mb-8">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span className="text-emerald-400 text-sm font-mono">READY_TO_DEPLOY</span>
+            <span className="text-emerald-400 text-sm font-mono">START_AUTOMATING</span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Build Your AI<br />
+            Ready to<br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
-              Workforce Today
+              Automate?
             </span>
           </h2>
           
           <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto font-mono">
-            {'>'} Join 500+ companies already using Sledopyt agents
+            {'>'} Get started with any automation in under 24 hours
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -650,7 +625,7 @@ const AgentsCTA = () => {
                 className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-10 py-6 text-lg"
                 data-testid="agents-contact-btn"
               >
-                Start Building
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -714,7 +689,8 @@ export default function AgentsPage() {
     <div className="bg-black min-h-screen">
       <AgentsNavigation />
       <AgentsHero />
-      <AgentShowcase />
+      <AutomationShowcase />
+      <UseCasesGrid />
       <VoiceAgentDemo />
       <AgentsCTA />
       <AgentsFooter />
