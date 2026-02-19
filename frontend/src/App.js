@@ -124,6 +124,9 @@ const Navigation = () => {
             <button onClick={() => scrollToSection('services')} className="text-slate-400 hover:text-white transition-colors duration-200" data-testid="nav-services">
               Services
             </button>
+            <Link to="/agents" className="text-slate-400 hover:text-white transition-colors duration-200" data-testid="nav-agents">
+              Agents
+            </Link>
             <button onClick={() => scrollToSection('team')} className="text-slate-400 hover:text-white transition-colors duration-200" data-testid="nav-team">
               Team
             </button>
