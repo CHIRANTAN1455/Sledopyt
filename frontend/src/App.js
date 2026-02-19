@@ -553,13 +553,50 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Abu Dhabi Image */}
-            <div className="mt-10 rounded-2xl overflow-hidden border border-slate-800">
-              <img 
-                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" 
-                alt="Abu Dhabi Skyline"
-                className="w-full h-48 object-cover"
-              />
+            {/* Terminal Style Map */}
+            <div className="mt-10 rounded-2xl overflow-hidden border border-slate-800 bg-slate-950">
+              {/* Terminal header */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-slate-900 border-b border-slate-800">
+                <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500"></span>
+                <span className="text-slate-500 text-xs ml-2 font-mono">location.sh</span>
+              </div>
+              {/* Terminal content */}
+              <div className="p-4 font-mono text-sm">
+                <div className="text-slate-500 mb-2">$ sledopyt --locate headquarters</div>
+                <div className="text-green-400 mb-3">→ Establishing secure connection...</div>
+                
+                {/* ASCII-style map */}
+                <div className="text-violet-400/70 text-xs leading-tight mb-4 overflow-hidden">
+                  <pre className="whitespace-pre">
+{`    ╔══════════════════════════════════════╗
+    ║     ARABIAN GULF                     ║
+    ║  ～～～～～～～～～～～～～～～～～～  ║
+    ║      ·  ·  · ABU DHABI ·  ·  ·       ║
+    ║         ┌─────────────┐              ║
+    ║    ╭────┤  AL MARYAH  ├────╮         ║
+    ║    │    │   ISLAND    │    │         ║
+    ║    │    │   ◉ HQ      │    │         ║
+    ║    ╰────┤  [WEWORK]   ├────╯         ║
+    ║         └─────────────┘              ║
+    ║                UAE                   ║
+    ╚══════════════════════════════════════╝`}
+                  </pre>
+                </div>
+
+                <div className="space-y-1 text-slate-300">
+                  <p><span className="text-sky-400">LAT:</span> 24.4539° N</p>
+                  <p><span className="text-sky-400">LNG:</span> 54.3773° E</p>
+                  <p><span className="text-sky-400">LOC:</span> WeWork Hub71, Al Khatem Tower</p>
+                  <p><span className="text-sky-400">ZONE:</span> ADGM Square, Al Maryah Island</p>
+                </div>
+                
+                <div className="mt-3 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  <span className="text-green-400 text-xs">ONLINE • Accepting visitors</span>
+                </div>
+              </div>
             </div>
           </motion.div>
 
